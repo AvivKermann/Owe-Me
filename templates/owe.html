@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ I Owe
+
+{% endblock %}
+{% block main %}
+
+<table class="font">
+    <thead<>
+        <tr clas="font">
+            <th>Lender</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        {% for debt in debts %}
+        <tr class="font">
+
+            <td> {{debt.loaner }}</td>
+            <td> ₪ {{ debt.amount }} </td>
+            <td> {{ debt.date }}</td>
+            <td>
+                <form action="/discard" method="post">
+                    <button name="discard" id="discard" value="{{ debt.id }}" class="aviv-button">Settle Debt</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+</table>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Debt
+{% endblock %}
+
+{% block main %}
+    <form action="/debt" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus required class="register-username" id="borrower" name="borrower" placeholder="Who Borrowed?" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="register-password" required id="loaner" name="loaner" placeholder="From Who?" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="register-confirm" required id="confirm" name="amount" placeholder="How much?" type="text">
+        </div>
+        <button class="debt-button" type="submit">Add Debt</button>
+    </form>
+{% endblock %}

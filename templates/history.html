@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+
+{% endblock %}
+{% block main %}
+
+<h1 class="main_title font"> Hi and welcome to my cs50 final project</h1>
+<table>
+    <thead<>
+        <tr class="font">
+            <th>Lender</th>
+            <th>Borrower</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+        {% for debt in debts %}
+        <tr class="font">
+
+            <td> {{debt.loaner }}</td>
+            <td> {{ debt.borrower }}</td>
+            <td> ₪ {{ debt.amount }} </td>
+            <td> {{ debt.isSettled }}</td>
+            <td> {{ debt.date }}</td>
+        </tr>
+        {% endfor %}
+
+</table>
+{% endblock %}
